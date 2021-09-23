@@ -3,15 +3,16 @@ import Todo from '../../models/Todo'
 import TodoItem from './TodoItem';
 
 type TodoListProps = {
-    todos: Todo[]
+    todos: Todo[],
+    onDeletedTodo: (todo: Todo) => void
 }
 
-const TodoList = ({ todos }: TodoListProps) => {
+const TodoList = ({ todos, onDeletedTodo }: TodoListProps) => {
     return (
         <div>
             {
                 todos && (
-                    todos.map((todo) => <TodoItem key={todo.task} {...todo}/>)
+                    todos.map((todo) => <TodoItem key={todo.task} {...todo} onDeletedTodo={onDeletedTodo}/>)
                 )
             }
         </div>
