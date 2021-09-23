@@ -18,7 +18,7 @@ const TodoContainer = () => {
     return (
         <div>
             <CreateTodo onCreatedTodo={addNewTodo}/>
-            <TodoList/>
+            <TodoList todos={todos}/>
         </div>
     );
 };
